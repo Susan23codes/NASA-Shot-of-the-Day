@@ -29,7 +29,8 @@ export default function APOD() {
                         <div className='date-and-explanation'>
                             <h2 style={{ textAlign: 'center', marginBottom: '2em' }}>
                                 Shot of the Day from {moment(data.date).format('MMMM Do, YYYY')}</h2>
-                            <p>{data.explanation.slice(0, -79)}</p>
+                            {/* <p>{data.explanation.slice(0, -79)}</p> */}
+                            <p>{data.explanation}></p>
                             {data.copyright ? (
                                 <p>Image Credit & Copyright: {data.copyright}</p>
                             ) : (
