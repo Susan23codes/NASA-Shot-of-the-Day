@@ -9,7 +9,6 @@
 
 .image-and-text {
   display: flex;
-  /* align-items: center; */
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-size: 17px;
   margin: 0 2em 0 2em;
