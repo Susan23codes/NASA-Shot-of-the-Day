@@ -25,12 +25,25 @@ export default function APOD() {
                         <h1 style={{ textAlign: 'center', marginBottom: '2em', width: '100%', paddingTop: '1rem' }}>{data.title}</h1>
                     </div>
                     <div className='image-and-text'>
+                        {data.media_type === "video" ? (
+                            <iframe
+                            width="560"
+                            height="315"
+                            src={data.url}
+                            title="Youtube Player"
+                            frameborder="2"
+                            allowFullScreen
+                            allow='autoplay'
+                            className='image'
+                          />
+                        ) : (
                         <img className='image' src={data.url} alt="NASA shot of the day" />
+                        )}
                         <div className='date-and-explanation'>
                             <h2 style={{ textAlign: 'center', marginBottom: '2em' }}>
                                 Shot of the Day from {moment(data.date).format('MMMM Do, YYYY')}</h2>
                             {/* <p>{data.explanation.slice(0, -79)}</p> */}
-                            <p>{data.explanation}></p>
+                            <p>{data.explanation}</p>
                             {data.copyright ? (
                                 <p>Image Credit & Copyright: {data.copyright}</p>
                             ) : (
